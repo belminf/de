@@ -1,0 +1,206 @@
+[colors]
+background-default = #00222222
+foreground-default = #dfdfdf
+underline-default = #80b3ff
+underline-dim = #50cccccc
+background-dim = #de000000
+
+background-alt = #de333333
+foreground-alt = #80b3ff
+
+foreground-center = #ffffff
+underline-center = #9080b3ff
+
+background-alert = #bd2c40
+
+background-bar = ${self.background-default}
+foreground-bar = ${self.foreground-default}
+
+[bar/primary]
+monitor = ${env:monitor}
+background = ${colors.background-bar}
+foreground = ${colors.foreground-bar}
+width = 100%
+height = 23
+radius = 6.0
+fixed-center = true
+underline-size = 2
+border-size = 0
+padding-left = 0
+padding-right = 2
+module-margin = 1
+font-0 = "FontAwesome:pixelsize=10;1"
+font-1 = "DejaVu Sans:pixelsize=11;1"
+font-2 = "siji;pixelsize=14;2"
+modules-left = i3 xwindow
+modules-center = date wlan battery
+modules-right = gpm-song xbacklight volume
+tray-position = right
+tray-padding = 3
+
+[bar/others]
+monitor = ${env:monitor}
+background = ${bar/primary.background}
+foreground = ${bar/primary.foreground}
+width = ${bar/primary.width}
+height = ${bar/primary.height}
+radius = ${bar/primary.radius}
+fixed-center = ${bar/primary.fixed-center}
+underline-size = ${bar/primary.underline-size}
+border-size = ${bar/primary.border-size}
+padding-left = ${bar/primary.padding-left}
+padding-right = ${bar/primary.padding-right}
+module-margin = ${bar/primary.module-margin}
+font-0 = ${bar/primary.font-0}
+font-1 = ${bar/primary.font-1}
+font-2 = ${bar/primary.font-2}
+modules-left = i3 xwindow
+modules-center = date wlan battery
+modules-right = gpm-song xbacklight volume
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+pin-workspaces = true
+enable-scroll = false
+label-mode = Mode: %mode%
+label-mode-padding = 2
+label-mode-background = ${colors.background-alt}
+label-mode-foreground = ${colors.foreground-default}
+label-focused = %index%
+label-focused-background = ${colors.background-alt}
+label-focused-underline = ${colors.underline-default}
+label-focused-padding = 2
+label-unfocused = %index%
+label-unfocused-background = ${colors.background-alt}
+label-unfocused-underline = ${colors.underline-dim}
+label-unfocused-padding = 2
+label-visible = ${self.label-focused}
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+label-urgent = ${self.label-focused}
+label-urgent-background = ${colors.background-alert}
+label-urgent-padding = ${self.label-focused-padding}
+
+[module/xwindow]
+type = internal/xwindow
+label = %title%
+label-maxlen = 100
+format-underline = ${colors.underline-dim}
+format-background = ${colors.background-dim}
+format-padding = 2
+
+[module/date]
+type = internal/date
+interval = 30
+date = "%A, %B %d"
+time = %H:%M
+label = %date%, %time%
+format-foreground = ${colors.foreground-center}
+format-underline = ${colors.underline-center}
+format-background = ${colors.background-dim}
+format-padding = 2
+
+[module/wlan]
+type = internal/network
+interface = wlp2s0
+interval = 3.0
+label-connected = 
+format-connected = <label-connected>
+format-connected-underline = ${colors.underline-center}
+format-connected-background = ${colors.background-dim}
+format-connected-padding = 1
+label-connected-foreground = ${colors.foreground-center}
+format-disconnected =
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 92
+format-charging = <animation-charging>
+format-discharging = <ramp-capacity>
+format-full = <ramp-capacity>
+format-charging-underline = ${colors.underline-center}
+format-discharging-underline = ${colors.underline-center}
+format-full-underline = ${colors.underline-center}
+format-charging-background = ${colors.background-dim}
+format-discharging-background = ${colors.background-dim}
+format-full-background = ${colors.background-dim}
+format-charging-padding = 1
+format-discharging-padding = 1
+format-full-padding = 1
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-foreground = ${colors.foreground-center}
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-foreground = ${colors.foreground-center}
+animation-charging-framerate = 750
+
+[module/gpm-song]
+type = custom/script
+exec = xdotool getwindowname $(xdotool search --name '.* - Google Play Music' | head -n 1) | sed 's/ - Google Play Music//' 2> /dev/null
+exec-if = xdotool getwindowname $(xdotool search --name '.* - Google Play Music' | head -n 1) | egrep '.+ - .+ - Google Play Music'
+format-prefix = " "
+format-background = ${colors.background-dim}
+interval = 3
+label = %output%
+
+[module/volume]
+type = internal/pulseaudio
+format-volume = <label-volume> <bar-volume>
+label-volume = 
+label-volume-foreground = ${colors.foreground-default}
+label-muted = " Muted"
+label-muted-foreground = ${colors.foreground-alt}
+format-background = ${colors.background-dim}
+bar-volume-width = 5
+bar-volume-foreground-0 = ${colors.foreground-alt}
+bar-volume-foreground-1 = ${colors.foreground-alt}
+bar-volume-foreground-2 = ${colors.foreground-alt}
+bar-volume-foreground-3 = ${colors.foreground-alt}
+bar-volume-foreground-4 = ${colors.foreground-alt}
+bar-volume-foreground-5 = ${colors.foreground-alt}
+bar-volume-foreground-6 = ${colors.foreground-alt}
+bar-volume-empty-foreground = ${colors.foreground-default}
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+
+[module/xbacklight]
+type = internal/xbacklight
+format = <label> <bar>
+label = 
+bar-width = 5
+bar-indicator = |
+bar-indicator-foreground = ${colors.foreground-default}
+bar-indicator-font = 2
+bar-fill = ─
+bar-fill-font = 2
+bar-fill-foreground = ${colors.foreground-alt}
+bar-empty = ─
+bar-empty-font = 2
+bar-empty-foreground = ${colors.foreground-default}
+
+[settings]
+screenchange-reload = true
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+
+; vim:ft=dosini
