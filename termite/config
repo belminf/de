@@ -1,0 +1,39 @@
+[options]
+scroll_on_output = false
+scroll_on_keystroke = true
+audible_bell = false
+visible_bell = true
+mouse_autohide = true
+allow_bold = true
+dynamic_title = true
+urgent_on_bell = true
+clickable_url = true
+font = Hack Regular 10
+scrollback_lines = 10000
+search_wrap = true
+cursor_blink = on
+cursor_shape = block
+filter_unmatched_urls = true
+
+[colors]
+foreground = #dcdccc
+foreground_bold = #ffffff
+background = rgba(26, 26, 26, 0.95)
+color0 = #3f3f3f
+color1 = #705050
+color2 = #60b48a
+color3 = #dfaf8f
+color4 = #506070
+color5 = #dc8cc3
+color6 = #8cd0d3
+color7 = #dcdccc
+color8 = #709080
+color9 = #dca3a3
+color10 = #c3bf9f
+color11 = #f0dfaf
+color12 = #94bff3
+color13 = #ec93d3
+color14 = #93e0e3
+color15 = #ffffff
+
+# vim: ft=dosini cms=#%s
