@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Name=Personal Chromium
+Terminal=false
+Icon=chromium
+Type=Application
+Categories=Network;WebBrowser;
+Exec=/usr/bin/chromium --profile-directory='Default'

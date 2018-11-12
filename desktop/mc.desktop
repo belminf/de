@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Midnight Commander
+Comment=Visual file manager
+Exec=i3-sensible-terminal -e mc %U
+StartupNotify=false
+Icon=folder
+MimeType=inode/directory
+Terminal=true
+Categories=Utility;
