@@ -52,7 +52,8 @@ bindsym --release $mod+v exec --no-startup-id xfce4-popup-clipman
 
 # Screenshot
 bindsym --release Print exec --no-startup-id xfce4-screenshooter -r -c
-bindsym --release Shift+Print exec xfce4-screenshooter -r -s ${HOME}/Screenshots
+exec_always --no-startup-id mkdir -p ${HOME}/screenshots
+bindsym --release Shift+Print exec xfce4-screenshooter -r -s ${HOME}/screenshots
 
 # Scratchpad
 bindcode Shift+66 exec --no-startup-id xpad --toggle
