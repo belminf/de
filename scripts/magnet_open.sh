@@ -7,7 +7,7 @@ set -e
 SCRIPT_DIR="$(dirname $(realpath "${BASH_SOURCE[0]}"))"
 
 # Source shared files
-source "${SCRIPT_DIR}/.environment"
+source "${SCRIPT_DIR}/../.environment"
 
 # Environment variables needed:
 : "${TRANSMISSION_HOST:=localhost:9091}"
