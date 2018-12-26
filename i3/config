@@ -71,22 +71,22 @@ bindsym $mod+Ctrl+BackSpace exec gtk-launch incognito-chromium
 bindsym $mod+Shift+BackSpace exec gtk-launch work-chromium
 
 # Whatsapp
-bindsym $mod+h exec chromium --app="https://web.whatsapp.com"
+bindsym $mod+h exec chromium --profile-directory='Default' --app="https://web.whatsapp.com"
 
 # GPM
-bindsym $mod+m exec chromium --app="https://play.google.com/music/listen"
+bindsym $mod+m exec chromium --profile-directory='Default' --app="https://play.google.com/music/listen"
 
 # Calendar
-bindsym $mod+c exec chromium --app="https://calendar.google.com/calendar/"
+bindsym $mod+c exec chromium --profile-directory='Default' --app="https://calendar.google.com/calendar/"
 
 # Todoist
-bindsym $mod+t exec chromium --app="https://todoist.com/app?lang=en#agenda%2F(today%20%7C%20overdue%20%7C%20no%20due%20date)"
+bindsym $mod+t exec chromium --profile-directory='Default' --app="https://todoist.com/app?lang=en#agenda%2F(today%20%7C%20overdue%20%7C%20no%20due%20date)"
 
 # Standard Notes
 bindsym $mod+n exec gtk-launch standardnotes-desktop.desktop
 
 # Gmail
-bindsym $mod+g exec chromium --app=https://mail.google.com/mail/u/0/
+bindsym $mod+g exec chromium --profile-directory='Default' --app=https://mail.google.com/mail/u/0/
 
 
 ## Navigation
