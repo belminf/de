@@ -14,7 +14,7 @@ bindsym $mod+w kill
 
 
 ## Startup
-exec_always --no-startup-id ${HOME}/de/scripts/polybar_launch.sh
+exec_always --no-startup-id ${HOME}/.de/scripts/polybar_launch.sh
 exec --no-startup-id dropbox
 exec --no-startup-id xfce4-clipman
 exec --no-startup-id blueman-applet
@@ -96,8 +96,8 @@ bindsym $mod+Ctrl+Right workspace next_on_output
 bindsym $mod+Ctrl+Left workspace prev_on_output
 
 bindsym $mod+grave workspace next_on_output
-bindsym $mod+Ctrl+grave exec --no-startup-id ${HOME}/de/scripts/create_workspace.sh
-bindsym $mod+Shift+grave exec --no-startup-id ${HOME}/de/scripts/move_to_new_workspace.sh
+bindsym $mod+Ctrl+grave exec --no-startup-id ${HOME}/.de/scripts/create_workspace.sh
+bindsym $mod+Shift+grave exec --no-startup-id ${HOME}/.de/scripts/move_to_new_workspace.sh
 
 
 # Monitor change
@@ -106,10 +106,10 @@ bindsym $mod+Ctrl+Down focus output down
 
 # Change focus
 focus_follows_mouse yes
-bindsym $mod+Left focus left; exec --no-startup-id ${HOME}/de/scripts/move_mouse.sh
-bindsym $mod+Right focus right; exec --no-startup-id ${HOME}/de/scripts/move_mouse.sh
-bindsym $mod+Down focus down; exec --no-startup-id ${HOME}/de/scripts/move_mouse.sh
-bindsym $mod+Up focus up; exec --no-startup-id ${HOME}/de/scripts/move_mouse.sh
+bindsym $mod+Left focus left; exec --no-startup-id ${HOME}/.de/scripts/move_mouse.sh
+bindsym $mod+Right focus right; exec --no-startup-id ${HOME}/.de/scripts/move_mouse.sh
+bindsym $mod+Down focus down; exec --no-startup-id ${HOME}/.de/scripts/move_mouse.sh
+bindsym $mod+Up focus up; exec --no-startup-id ${HOME}/.de/scripts/move_mouse.sh
 
 # Move focused window with cursor keys
 bindsym $mod+Shift+Left move left
@@ -210,7 +210,7 @@ for_window [title="^Search$"] floating enable
 ## Display
 
 # Search for DP monitor and set it as primary
-exec_always --no-startup-id ${HOME}/de/scripts/update_display.sh
+exec_always --no-startup-id ${HOME}/.de/scripts/update_display.sh
 
 # Manage display brightness
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight + 5
