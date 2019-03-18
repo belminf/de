@@ -22,13 +22,13 @@ With leader key (<kbd>R-Window</kbd>):
   * <kbd>End</kbd>: Bring up power menu (e.g., shutdown, restart, etc.)
   * <kbd>Shift</kbd><kbd>End</kbd>: Lock screen
   * <kbd>Q</kbd>: Quit window
-  * <kbd>V</kbd>: Launch clipboard manager
+  * <kbd>Shift</kbd><kbd>V</kbd>: Launch clipboard manager
 * Application shortcuts:
   * <kbd>Enter</kbd>: Launch tmux (terminal)
   * <kbd>Backspace</kbd>: Launch browser
   * <kbd>H</kbd>: Launch WhatsApp
   * <kbd>M</kbd>: Launch Google Play Music
-  * <kbd>C</kbd>: Launch Google Calendar
+  * <kbd>Shift</kbd><kbd>C</kbd>: Launch Google Calendar
   * <kbd>T</kbd>: Launch Todoist
   * <kbd>N</kbd>: Launch Standard Notes
   * <kbd>G</kbd>: Launch Gmail
@@ -47,7 +47,7 @@ With leader key (<kbd>R-Window</kbd>):
   * <kbd>Shift</kbd><kbd>T</kbd>: Tabbed layout
   * <kbd>Shift</kbd><kbd>\\</kbd> (`|`): Split horizontal
   * <kbd>Shift</kbd><kbd>-</kbd> (`_`): Split vertical
-  * <kbd>F</kbd>: Go fullscreen
+  * <kbd>Shift</kbd><kbd>F</kbd>: Go fullscreen
 * Window focus:
   * <kbd>Tab</kbd>: Toggle focus between floating and tiled windows
   * <kbd>Shift</kbd><kbd>Tab</kbd>: Toggle floating for a window

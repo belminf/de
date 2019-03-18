@@ -15,6 +15,7 @@ bindsym $mod+w kill
 
 ## Startup
 exec_always --no-startup-id ${HOME}/.de/scripts/polybar_launch.sh
+exec_always --no-startup-id xkbcomp -I${HOME}/.de/xkb/ ${HOME}/.de/xkb/keymap.xkb $DISPLAY
 exec --no-startup-id dropbox
 exec --no-startup-id xfce4-clipman
 exec --no-startup-id blueman-applet
@@ -48,7 +49,7 @@ bindsym $mod+Ctrl+End exec --no-startup-id light-locker-command -l
 bindsym $mod+space exec rofi -show drun
 
 # Clipboard
-bindsym --release $mod+v exec --no-startup-id xfce4-popup-clipman
+bindsym --release Shift+$mod+v exec --no-startup-id xfce4-popup-clipman
 
 # Screenshot
 bindsym --release Print exec --no-startup-id xfce4-screenshooter -r -c
@@ -77,7 +78,7 @@ bindsym $mod+h exec chromium --profile-directory='Default' --app="https://web.wh
 bindsym $mod+m exec chromium --profile-directory='Default' --app="https://play.google.com/music/listen"
 
 # Calendar
-bindsym $mod+c exec chromium --profile-directory='Default' --app="https://calendar.google.com/calendar/"
+bindsym Shift+$mod+c exec chromium --profile-directory='Default' --app="https://calendar.google.com/calendar/"
 
 # Todoist
 bindsym $mod+t exec chromium --profile-directory='Default' --app="https://todoist.com/app?lang=en#agenda%2F(today%20%7C%20overdue%20%7C%20no%20due%20date)"
@@ -172,7 +173,7 @@ bindsym $mod+Shift+backslash layout splith
 bindsym $mod+Shift+minus layout splitv
 
 # Fullscreen
-bindsym $mod+f fullscreen toggle
+bindsym Shift+$mod+f fullscreen toggle
 
 
 ## Floating
