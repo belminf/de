@@ -20,6 +20,7 @@ exec --no-startup-id dropbox
 exec --no-startup-id xfce4-clipman
 exec --no-startup-id blueman-applet
 exec --no-startup-id xpad -N
+exec --no-startup-id solaar
 
 
 ## Locking
