@@ -23,7 +23,7 @@ MAGNET_LINK="$1"
 SESSION_ID=$(curl --silent --user "${TRANSMISSION_USER}:${TRANSMISSION_PASS}" "http://${TRANSMISSION_HOST}/transmission/rpc" | sed 's/.*\(X-Transmission-Session-Id: [[:alnum:]]\+\).*$/\1/')
 
 # Submit Magnet link
-RETURN_JSON=$(curl --silent -H "${SESSION_ID}" "http://${TRANSMISSION_HOST}/transmission/rpc" -d '{"method":"torrent-add","arguments":{"paused":false,"download-dir":"'${TRANSMISSION_DL_DIR}'","filename":"'${MAGNET_LINK}'"}}')
+RETURN_JSON=$(curl --silent --user "${TRANSMISSION_USER}:${TRANSMISSION_PASS}" -H "${SESSION_ID}" "http://${TRANSMISSION_HOST}/transmission/rpc" -d '{"method":"torrent-add","arguments":{"paused":false,"download-dir":"'${TRANSMISSION_DL_DIR}'","filename":"'${MAGNET_LINK}'"}}')
 
 # Notify
 notify-send --app-name="Transmission" "RPC call" "$(echo "${RETURN_JSON}" | sed 's/{"arguments":{"\([^"]\+\)".*"name":"\([^"]\+\)".*"result":"\([^"]\+\)".*$/\1 (\3): \2/')"
