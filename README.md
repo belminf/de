@@ -7,6 +7,15 @@ Makefile should install packages and setup DE:
 ```bash
 make install
 ```
+
+### Autorandr
+Must save profiles:
+```bash
+autorandr --save docked
+# Disconnect dock
+autorandr --save mobile
+sudo systemctl enable autorandr
+```
 ## i3 Keys:
 Without leader key:
 
