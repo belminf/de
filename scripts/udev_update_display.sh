@@ -8,7 +8,8 @@ export XAUTHORITY="${HOME}/.Xauthority"
 SCRIPT_PATH="$(dirname "$0")"
 
 # Update display via script
-$SCRIPT_PATH/update_display
+sleep 1
+$SCRIPT_PATH/update_display.sh
 
 # Log
-logger -t udev-monitor-script "updated display"
+logger -t udev-monitor-script "Updated display"
