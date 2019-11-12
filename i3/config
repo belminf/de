@@ -6,6 +6,9 @@ set $mod Mod4
 # Set font
 font pango:Inconsolata Regular 10
 
+# Default orientation
+default_orientation horizontal
+
 # Restart
 bindsym $mod+Shift+r restart
 
