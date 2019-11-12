@@ -211,7 +211,7 @@ for_window [title="^Search$"] floating enable
 ## Display
 
 # Search for DP monitor and set it as primary
-exec_always --no-startup-id ${HOME}/.de/scripts/update_display.sh
+exec_always --no-startup-id autorandr --change
 
 # Manage display brightness
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight + 5

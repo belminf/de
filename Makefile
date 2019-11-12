@@ -5,3 +5,4 @@ install :
 	for c in i3 termite polybar dunst rofi; do ln -sf $$(readlink -f $$c) ~/.config/; done
 	xdg-mime default mc.desktop inode/directory
 	ln -sf $$(readlink -f scripts/autorandr_post.sh) ~/.config/autorandr/postswitch
+	sudo systemctl enable autorandr
