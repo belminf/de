@@ -18,7 +18,6 @@ bindsym $mod+w kill
 
 ## Startup
 exec_always --no-startup-id ${HOME}/.de/scripts/polybar_launch.sh
-exec_always --no-startup-id xkbcomp -I${HOME}/.de/xkb/ ${HOME}/.de/xkb/keymap.xkb $DISPLAY
 exec --no-startup-id dropbox
 exec --no-startup-id xfce4-clipman
 exec --no-startup-id blueman-applet
