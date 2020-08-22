@@ -67,7 +67,7 @@ for_window [class=xpad] floating enable
 ## Application shortcuts
 
 # Terminal: Using script from https://github.com/belminf/personal_scripts
-bindsym $mod+Return exec i3-sensible-terminal -t 'tmux' -e 'bash -i -c "${HOME}/.tmux/session_attach.sh"'
+bindsym $mod+Return exec i3-sensible-terminal -t 'tmux' -e 'zsh -i -c "${HOME}/.tmux/session_attach.sh"'
 
 # Chromium
 bindsym $mod+BackSpace exec firefox
