@@ -9,6 +9,8 @@ Can no longer repeat characters
 
 ## Modify existing files
 
+Need to do this after a reinstall of keyboard software.
+
 ### Include types
 
 Add it to /usr/share/X11/xkb/types/complete
