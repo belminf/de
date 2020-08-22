@@ -70,27 +70,26 @@ for_window [class=xpad] floating enable
 bindsym $mod+Return exec i3-sensible-terminal -t 'tmux' -e 'bash -i -c "${HOME}/.tmux/session_attach.sh"'
 
 # Chromium
-bindsym $mod+BackSpace exec brave --profile-directory='Default'
-bindsym $mod+Ctrl+BackSpace exec brave --incognito --profile-directory='Incognito'
-bindsym $mod+Shift+BackSpace exec brave --profile-directory='Work'
+bindsym $mod+BackSpace exec firefox
+bindsym $mod+Ctrl+BackSpace exec firefox -private-window
 
 # Whatsapp
-bindsym $mod+h exec brave --profile-directory='Default' --app="https://web.whatsapp.com"
+bindsym $mod+h exec firefox -ssb "https://web.whatsapp.com"
 
 # GPM
-bindsym $mod+m exec brave --profile-directory='Default' --app="https://play.google.com/music/listen"
+bindsym $mod+m exec firefox -ssb "https://music.youtube.com"
 
 # Calendar
-bindsym Shift+$mod+c exec brave --profile-directory='Default' --app="https://calendar.google.com/calendar/"
+bindsym Shift+$mod+c exec firefox -ssb "https://calendar.google.com/calendar/"
 
 # Todoist
-bindsym $mod+t exec brave --profile-directory='Default' --app="https://todoist.com/app?lang=en#agenda%2F(today%20%7C%20overdue%20%7C%20no%20due%20date)"
+bindsym $mod+t exec firefox -ssb "https://todoist.com/app?lang=en#agenda%2F(today%20%7C%20overdue%20%7C%20no%20due%20date)"
 
 # Standard Notes
 bindsym $mod+n exec gtk-launch standardnotes-desktop.desktop
 
 # Gmail
-bindsym $mod+g exec brave --profile-directory='Default' --app=https://mail.google.com/mail/u/0/
+bindsym $mod+g exec firefox -ssb https://mail.google.com/mail/u/0/
 
 
 ## Navigation
