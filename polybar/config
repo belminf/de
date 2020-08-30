@@ -105,16 +105,12 @@ format-background = ${colors.background-dim}
 format-padding = 2
 
 [module/wlan]
-type = internal/network
-interface = wlp2s0
-interval = 3.0
-label-connected = 
-format-connected = <label-connected>
-format-connected-underline = ${colors.underline-center}
-format-connected-background = ${colors.background-dim}
-format-connected-padding = 1
-label-connected-foreground = ${colors.foreground-center}
-format-disconnected =
+type = custom/script
+interval = 2.0
+exec = iwctl station wlan0 show | grep -q disconnected && echo "" || echo ""
+format-underline = ${colors.underline-center}
+format-background = ${colors.background-dim}
+format-padding = 1
 
 [module/battery]
 type = internal/battery
