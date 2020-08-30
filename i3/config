@@ -10,7 +10,7 @@ font pango:Inconsolata Regular 10
 default_orientation horizontal
 
 # Restart
-bindsym $mod+Shift+r restart
+bindsym $mod+Shift+r exec ${HOME}/.de/scripts/display_reset.sh
 
 # Close focused window
 bindsym $mod+w kill
@@ -18,7 +18,6 @@ bindsym $mod+w kill
 
 ## Startup
 exec_always --no-startup-id ${HOME}/.de/scripts/polybar_launch.sh
-exec --no-startup-id ${HOME}/.de/scripts/display_reset.sh
 exec --no-startup-id dropbox
 exec --no-startup-id xfce4-clipman
 exec --no-startup-id blueman-applet
@@ -30,6 +29,9 @@ exec --no-startup-id xset s off
 exec --no-startup-id xset dpms 0 0 120
 exec --no-startup-id light-locker --lock-after-screensaver=180 --lock-on-suspend
 
+# Display setup
+exec --no-startup-id ${HOME}/.de/scripts/display_reset.sh
+exec --no-startup-id "pkill redshift 2>/dev/null; redshift -t 6500:2500 -l 40:-74"
 
 ## Exit options
 set $mode_system Choose: (l) Lock, (x) Logout, (r) Reboot, (Shift+s) Shutdown
@@ -214,21 +216,11 @@ for_window [title="^Search$"] floating enable
 ## Display
 
 # Search for DP monitor and set it as primary
-exec_always --no-startup-id autorandr --change
 
 # Manage display brightness
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight + 5
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight - 5
 
-# Tint display
-exec --no-startup-id "pkill redshift &>/dev/null ; redshift -t 6500:2500 -l 40:-74"
-
-# Display background
-exec_always --no-startup-id xsetroot -solid "#000000"
-exec_always --no-startup-id feh --bg-scale ${HOME}/.wallpaper.png
-
-# Dim inactive windows
-exec_always --no-startup-id "compton -b --inactive-opacity 0.90"
 
 # Personalization
 new_window pixel 0

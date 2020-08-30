@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
-sleep 5
-xrandr --output DP1-1 --off
-sleep 2
-xrandr --output DP1-1 --auto
-sleep 2
-i3-msg restart
-sleep 2
-i3-msg restart
+# Reset display
+autorandr --change --force
+
+# Display BG
+xsetroot -solid "#000000"
+feh --bg-scale "${HOME}/.wallpaper.png"
+
+# Set compositor
+compton -b --inactive-opacity 0.90
