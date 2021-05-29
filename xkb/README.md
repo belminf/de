@@ -13,19 +13,19 @@ Need to do this after a reinstall of keyboard software.
 
 ### Include types
 
-Add it to /usr/share/X11/xkb/types/complete
 
 ```
-    include "win_remap"
+sudo nvim /usr/share/X11/xkb/types/complete
+
+# Add: include "win_remap"
 ```
 
 ### Add as available option
 
-Add it to /usr/share/X11/xkb/rules/evdev
-Under `shift:rshift_both_capslock_cancel = +shift(rshift_both_capslock_cancel)`
-
 ```
-win_remap:super                    =       +win_remap(super)
+sudo nvim /usr/share/X11/xkb/rules/evdev
+# Under `shift:rshift_both_capslock_cancel = +shift(rshift_both_capslock_cancel)`
+# Add: win_remap:super                    =       +win_remap(super)
 ```
 
 ### Setup keyboard
