@@ -181,6 +181,7 @@ bar-volume-empty-font = 2
 type = internal/xbacklight
 format = <label> <bar>
 label = 
+output = eDP1
 bar-width = 5
 bar-indicator = |
 bar-indicator-foreground = ${colors.foreground-default}

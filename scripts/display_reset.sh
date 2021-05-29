@@ -8,4 +8,4 @@ xsetroot -solid "#000000"
 feh --bg-scale "${HOME}/.wallpaper.png"
 
 # Set compositor
-compton -b --inactive-opacity 0.90
+picom -b -i 0.90
