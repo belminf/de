@@ -200,8 +200,8 @@ bindsym $mod+Tab focus mode_toggle
 for_window [title="Bluetooth Devices"] floating enable
 
 # Wifi
-bindsym Shift+F12 exec i3-sensible-terminal -t 'wifi-menu' -e 'sudo wifi-menu'
-for_window [title="wifi-menu"] floating enable
+bindsym Shift+F12 exec iwgtk
+for_window [title="iwgtk"] floating enable
 
 # Audio
 bindsym Shift+F11 exec pavucontrol
