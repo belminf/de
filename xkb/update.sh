@@ -14,4 +14,5 @@ grep -q "$TYPES_LINE"  "$TYPES_FILE" || \
 grep -q 'win_remap' "$RULES_FILE" || \
   sudo sed -i "/^${RULES_MATCH}/a \\${RULES_LINE}" "$RULES_FILE"
 
+cd ~/.de/xkb || return
 xkbcomp map "$DISPLAY" >/dev/null 2>&1
