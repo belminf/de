@@ -73,26 +73,8 @@ for_window [class=xpad] floating enable
 bindsym $mod+Return exec i3-sensible-terminal -t 'tmux' -e zsh -i -c "${HOME}/.tmux/session_attach.sh"
 
 # Chromium
-bindsym $mod+BackSpace exec firefox
-bindsym $mod+Ctrl+BackSpace exec firefox -private-window
-
-# Whatsapp
-bindsym $mod+h exec firefox -ssb "https://web.whatsapp.com"
-
-# GPM
-bindsym $mod+m exec firefox -ssb "https://music.youtube.com"
-
-# Calendar
-bindsym Shift+$mod+c exec firefox -ssb "https://calendar.google.com/calendar/"
-
-# Todoist
-bindsym $mod+t exec firefox -ssb "https://todoist.com/app?lang=en#agenda%2F(today%20%7C%20overdue%20%7C%20no%20due%20date)"
-
-# Standard Notes
-bindsym $mod+n exec gtk-launch standard-notes
-
-# Gmail
-bindsym $mod+g exec firefox -ssb https://mail.google.com/mail/u/0/
+bindsym $mod+BackSpace exec /opt/google/chrome/chrome
+bindsym $mod+Ctrl+BackSpace exec /opt/google/chrome/chrome --incognito --profile-directory="Profile 1"
 
 # Bluetooth
 bindsym Shift+$mod+b exec bash -c "systemctl status bluetooth && sudo systemctl stop bluetooth || sudo systemctl start bluetooth"
