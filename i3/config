@@ -58,7 +58,7 @@ bindsym $mod+space exec rofi -show drun
 bindsym --release Shift+$mod+v exec --no-startup-id xfce4-popup-clipman
 
 # Screenshot
-bindsym --release Print exec --no-startup-id xfce4-screenshooter -r -c
+bindsym --release Print exec --no-startup-id shotgun -g "$(hacksaw)" - | xclip -t 'image/png' -selection clipboard
 exec_always --no-startup-id mkdir -p ${HOME}/screenshots
 bindsym --release Shift+Print exec xfce4-screenshooter -r -s ${HOME}/screenshots
 
@@ -69,7 +69,7 @@ for_window [class=xpad] floating enable
 
 ## Application shortcuts
 
-# Terminal: Using script from https://github.com/belminf/personal_scripts
+# Terminal
 bindsym $mod+Return exec i3-sensible-terminal -t 'tmux' -e zsh -i -c "${HOME}/.tmux/session_attach.sh"
 
 # Chromium
