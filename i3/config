@@ -94,6 +94,9 @@ bindsym $mod+n exec gtk-launch standard-notes
 # Gmail
 bindsym $mod+g exec firefox -ssb https://mail.google.com/mail/u/0/
 
+# Bluetooth
+bindsym Shift+$mod+b exec bash -c "systemctl status bluetooth && sudo systemctl stop bluetooth || sudo systemctl start bluetooth"
+
 
 ## Navigation
 
