@@ -73,8 +73,11 @@ for_window [class=xpad] floating enable
 bindsym $mod+Return exec i3-sensible-terminal -t 'tmux' -e zsh -i -c "${HOME}/.tmux/session_attach.sh"
 
 # Chromium
-bindsym $mod+BackSpace exec /opt/google/chrome/chrome
+bindsym $mod+BackSpace exec /opt/google/chrome/chrome --profile-directory="Default"
 bindsym $mod+Ctrl+BackSpace exec /opt/google/chrome/chrome --incognito --profile-directory="Profile 1"
+
+# Standard Notes
+bindsym $mod+n exec gtk-launch standard-notes
 
 # Bluetooth
 bindsym Shift+$mod+b exec bash -c "systemctl status bluetooth && sudo systemctl stop bluetooth || sudo systemctl start bluetooth"
