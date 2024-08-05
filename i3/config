@@ -70,7 +70,7 @@ for_window [class=xpad] floating enable
 ## Application shortcuts
 
 # Terminal
-bindsym $mod+Return exec i3-sensible-terminal -t 'tmux' -e zsh -i -c "${HOME}/.tmux/session_attach.sh"
+bindsym $mod+Return exec TERMINAL=kitty i3-sensible-terminal -T 'tmux' zsh -i -c "${HOME}/.tmux/session_attach.sh"
 
 # Chromium
 bindsym $mod+BackSpace exec /opt/google/chrome/chrome --profile-directory="Default"
