@@ -6,13 +6,3 @@ opacity = 0.7
 
 [font]
 normal = { family = "Fira Mono", style="Regular" }
-
-[[keyboard.bindings]]
-key = "V"
-mods = "Control"
-action = "Paste"
-
-[[keyboard.bindings]]
-key = "V"
-mods = "Control|Shift"
-chars = "\u0003"
