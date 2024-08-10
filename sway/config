@@ -74,7 +74,6 @@ bindsym $mod+Ctrl+Right focus output right
 # Window focus
 exec /usr/share/sway-contrib/inactive-windows-transparency.py --opacity 0.8
 focus_follows_mouse yes
-mouse_warping container
 bindsym $mod+Left focus left
 bindsym $mod+Right focus right
 bindsym $mod+Down focus down

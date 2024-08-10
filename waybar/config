@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "height": 30,
-    "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
+    "modules-left": ["sway/workspaces", "sway/mode", "idle_inhibitor", "sway/window"],
     "modules-center": ["clock"],
     "modules-right": ["pulseaudio", "network", "backlight", "bluetooth", "battery", "tray"],
     "sway/mode": {
@@ -18,8 +18,8 @@
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
-            "activated": "●",
-            "deactivated": "◌"
+            "activated": "",
+            "deactivated": ""
         }
     },
     "tray": {
@@ -35,13 +35,12 @@
     },
     "battery": {
         "states": {
-            "good": 95,
-            "warning": 30,
-            "critical": 15
+            "charged": 95,
+            "full": 100,
         },
-        "format": "{capacity}% {icon}",
-        "format-good": "",
+        "format-charged": "",
         "format-full": "",
+        "format": "{capacity}% {icon}",
         "format-icons": ["", "", "", "", ""]
     },
     "network": {
