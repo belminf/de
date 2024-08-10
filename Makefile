@@ -1,8 +1,27 @@
 install :
-	yay -S --needed --noconfirm i3-gaps polybar mc rofi kitty xdotool dunst autorandr zenity xautolock iwgtk || true
-	for d in desktop/*.desktop; do ln -sf $$(readlink -f $$d) ~/.local/share/applications/$$(basename $$d); done
+	# Installs
+	yay -S --needed --noconfirm \
+		sway \
+		swaybg \
+		keyd \
+		jq \
+		mako \
+		waybar \
+		otf-font-awesome \
+		swayidle \
+		cliphist \
+		sway-contrib \
+		grim \
+		gammastep \
+		iwgtk \
+		kanshi
+	
+	# Link custom configs
+	sudo ln -sf $$(readlink -f keyd/default.conf) /etc/keyd/default.conf
 	ln -sf $$(readlink -f .inputrc) ~/.inputrc
-	for c in i3 kitty polybar dunst rofi; do ln -sf $$(readlink -f $$c) ~/.config/; done
-	xdg-mime default mc.desktop inode/directory
-	ln -sf $$(readlink -f scripts/autorandr_post.sh) ~/.config/autorandr/postswitch
-	sudo systemctl enable autorandr
+	
+	# .config configs
+	for c in sway waybar gammastep rofi kanshi; do ln -sf $$(readlink -f $$c) ~/.config/; done
+	
+	# Services
+	sudo systemctl enable keyd --now

@@ -1,0 +1,85 @@
+* {
+  border: none;
+  border-radius: 0;
+  font-family: Inconsolata Nerd Font Mono;
+  font-size: 13px;
+  min-height: 0;
+}
+
+@import "colors.css";
+
+window#waybar {
+  background: @background;
+  border-bottom: 0;
+  color: @foreground;
+}
+
+#workspaces button {
+  padding: 0 5px;
+  background: transparent;
+  color: @foreground;
+  border-bottom: 3px solid transparent;
+}
+
+#workspaces button.focused {
+  background: @focused;
+  border-bottom: 3px solid @focused;
+}
+
+#mode,
+#clock,
+#battery {
+  padding: 0 10px;
+  margin: 0 5px;
+}
+
+#mode {
+  background: @alert;
+  border-bottom: 3px solid @foreground;
+}
+
+#clock {
+  background-color: @focused;
+  color: @foreground;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+#battery {
+  background-color: @foreground;
+  color: @background;
+}
+
+#battery.charging {
+  color: @background;
+  background-color: @green;
+}
+
+@keyframes blink {
+  to {
+    background-color: @foreground;
+    color: @background;
+  }
+}
+
+#idle_inhibitor,
+#pulseaudio,
+#network,
+#backlight,
+#battery,
+#clock,
+#bluetooth,
+#tray {
+  padding: 0 6px;
+  margin: 0 3px;
+}
+
+#battery.warning:not(.charging) {
+  background: @red;
+  color: @foreground;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}

@@ -1,8 +1,0 @@
-[Desktop Entry]
-Version=1.0
-Name=Incognito Chromium
-Terminal=false
-Icon=chromium
-Type=Application
-Categories=Network;WebBrowser;
-Exec=/usr/bin/chromium --incognito --profile-directory='Incognito'

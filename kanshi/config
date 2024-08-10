@@ -1,0 +1,8 @@
+profile {
+    output eDP-1 scale 1.5 position 0,370
+    output DP-1 mode 3440x1440 position 1706,0
+}
+
+profile {
+    output eDP-1 scale 1
+}

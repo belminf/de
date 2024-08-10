@@ -1,12 +1,6 @@
 #!/usr/bin/env bash
 
-# Ref: https://github.com/sandeel/i3-new-workspace
+HIGHEST_WORKSPACE=$(swaymsg -t get_workspaces -r | jq -r '.[] | .name' | sort -n | tail -n 1)
+NEW_WORKSPACE=$((HIGHEST_WORKSPACE + 1))
 
-CURRENT_WORKSPACES=$(i3-msg -t get_workspaces)
-
-for i in {1..10} ; do
-    if [[ $CURRENT_WORKSPACES != *"\"num\":$i"* ]] ; then
-        i3-msg workspace number $i
-        break
-    fi
-done
+swaymsg workspace number $NEW_WORKSPACE

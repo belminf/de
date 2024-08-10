@@ -1,0 +1,165 @@
+# Use super key
+set $mod Mod4
+
+# Display
+output * bg "${HOME}/.de/wallpaper.png" fill
+exec ${HOME}/.de/scripts/idle.sh
+
+# Daemons
+exec_always pkill kanshi; kanshi
+exec_always pkill mako; mako
+
+# Personalization
+font pango:Inconsolata Nerd Font Mono 10
+default_border none
+default_floating_border pixel 2
+gaps inner 10
+smart_borders on
+
+# Default orientation
+default_orientation horizontal
+
+# Restart
+bindsym $mod+Shift+r reload
+
+# Close focused window
+bindsym $mod+w kill
+
+# Bar
+bar swaybar_command waybar
+
+# Startup
+exec insync start
+exec gammastep-indicator
+
+# Launcher
+bindsym $mod+space exec rofi -show drun
+
+# Clipboard
+exec wl-paste --watch cliphist store
+bindsym $mod+p exec cliphist list | rofi -dmenu | cliphist decode | wl-copy
+bindsym $mod+Shift+v exec cliphist list | rofi -dmenu | cliphist decode | wl-copy
+
+# Exit options
+bindsym $mod+End exec ${HOME}/.de/scripts/powermenu.sh
+
+# Screenshot
+bindsym --release Print exec XDG_SCREENSHOTS_DIR="${HOME}/screenshots" /usr/share/sway-contrib/grimshot copy area
+exec_always --no-startup-id mkdir -p "${HOME}/screenshots"
+bindsym --release Shift+Print exec XDG_SCREENSHOTS_DIR="${HOME}/screenshots" /usr/share/sway-contrib/grimshot save area
+
+# Terminal
+bindsym $mod+Return exec TERMINAL=kitty i3-sensible-terminal -T 'tmux' zsh -i -c "${HOME}/.tmux/session_attach.sh"
+
+# Chromium
+bindsym $mod+BackSpace exec /opt/google/chrome/chrome --profile-directory="Default" --enable-features=useOzonePlatform --ozone-platform=wayland --gtk-version=4
+bindsym $mod+Ctrl+BackSpace exec /opt/google/chrome/chrome --incognito --profile-directory="Profile 1" --enable-features=useOzonePlatform --ozone-platform=wayland --gtk-version=4
+
+# Webapps
+bindsym $mod+n exec ${HOME}/.de/scripts/webapp_launch.sh "Standard Notes"
+
+# Workspace change
+bindsym $mod+Ctrl+Up workspace next_on_output
+bindsym $mod+Ctrl+Down workspace prev_on_output
+
+# Lever actions
+bindsym $mod+grave workspace next_on_output
+bindsym $mod+Ctrl+grave exec --no-startup-id ${HOME}/.de/scripts/create_workspace.sh
+bindsym $mod+Shift+grave exec --no-startup-id ${HOME}/.de/scripts/move_to_new_workspace.sh
+
+# Monitor change
+bindsym $mod+Ctrl+Left focus output left
+bindsym $mod+Ctrl+Right focus output right
+
+# Window focus
+exec /usr/share/sway-contrib/inactive-windows-transparency.py --opacity 0.8
+focus_follows_mouse yes
+mouse_warping container
+bindsym $mod+Left focus left
+bindsym $mod+Right focus right
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+
+# Move window
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+
+# Move workspace
+bindsym $mod+Mod1+Left move workspace to output left
+bindsym $mod+Mod1+Right move workspace to output right
+
+# Switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+# Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1; workspace 1
+bindsym $mod+Shift+2 move container to workspace 2; workspace 2
+bindsym $mod+Shift+3 move container to workspace 3; workspace 3
+bindsym $mod+Shift+4 move container to workspace 4; workspace 4
+bindsym $mod+Shift+5 move container to workspace 5; workspace 5
+bindsym $mod+Shift+6 move container to workspace 6; workspace 6
+bindsym $mod+Shift+7 move container to workspace 7; workspace 7
+bindsym $mod+Shift+8 move container to workspace 8; workspace 8
+bindsym $mod+Shift+9 move container to workspace 9; workspace 9
+bindsym $mod+Shift+0 move container to workspace 10; workspace 10
+
+# Resize window
+mode "resize" {
+
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+        bindsym j resize shrink height 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+# Change layout mode
+bindsym $mod+Shift+backslash layout splith
+bindsym $mod+Shift+minus layout splitv
+
+# Mouse+$mod to drag floating windows
+floating_modifier $mod
+
+# Toggle tiling/floating
+bindsym $mod+Tab floating toggle
+
+# Change focus from tiling/focus windows
+bindsym $mod+Shift+Tab focus mode_toggle
+
+# Bluetooth
+# TODO
+#for_window [title="Bluetooth Devices"] floating enable
+
+# Wifi
+bindsym Shift+F12 exec iwgtk
+for_window [title="iwgtk"] floating enable
+
+# Audio
+bindsym Shift+F11 exec pavucontrol
+for_window [title="Volume Control"] floating enable
+bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume @DEFAULT_SINK@ +5%"
+bindsym XF86AudioLowerVolume exec "pactl set-sink-volume @DEFAULT_SINK@ -5%"
+bindsym XF86AudioMute exec "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+
+# Manage display brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight + 5
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight - 5

@@ -1,8 +1,0 @@
-[Desktop Entry]
-Version=1.0
-Name=Work Chromium
-Terminal=false
-Icon=chromium
-Type=Application
-Categories=Network;WebBrowser;
-Exec=/usr/bin/chromium --profile-directory='Work Profile'

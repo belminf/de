@@ -1,0 +1,6 @@
+configuration {
+  show-icons: true;
+  font: "Inconsolata Nerd Font Mono 12";
+}
+
+@theme "~/.config/rofi/theme.rasi"

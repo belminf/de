@@ -1,6 +1,0 @@
-[Desktop Entry]
-Name=Magnet RPC open
-Type=Application
-Comment=Open a magnet link with Transmission RPC
-Exec=~/.de/scripts/magnet_open.sh %U
-MimeType=x-scheme-handler/magnet;
