@@ -39,10 +39,8 @@ window#waybar {
 }
 
 #clock {
-  background-color: @focused;
   color: @foreground;
   font-size: 15px;
-  font-weight: bold;
 }
 
 #battery {
