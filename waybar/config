@@ -26,7 +26,7 @@
         "spacing": 10
     },
     "clock": {
-        "format": "{:%H:%M, %b %d %Y}"
+        "format": "{:%b %d %Y, %H:%M}"
     },
     "backlight": {
         "device": "intel_backlight",

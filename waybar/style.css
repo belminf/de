@@ -39,7 +39,8 @@ window#waybar {
 }
 
 #clock {
-  color: @foreground;
+  background-color: @foreground;
+  color: @background;
   font-size: 15px;
 }
 
