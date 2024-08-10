@@ -6,8 +6,8 @@ output * bg "${HOME}/.de/wallpaper.png" fill
 exec ${HOME}/.de/scripts/idle.sh
 
 # Daemons
-exec_always pkill kanshi; kanshi
-exec_always pkill mako; mako
+exec_always sh -c 'pkill kanshi; kanshi &'
+exec_always sh -c 'pkill mako; mako &'
 
 # Personalization
 font pango:Inconsolata Nerd Font Mono 10
@@ -148,6 +148,9 @@ bindsym $mod+Shift+Tab focus mode_toggle
 # Bluetooth
 # TODO
 #for_window [title="Bluetooth Devices"] floating enable
+
+# Prompts
+for_window [title="Save File"] floating enable
 
 # Wifi
 bindsym Shift+F12 exec iwgtk

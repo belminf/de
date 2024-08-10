@@ -10,6 +10,18 @@ Makefile should install packages and setup DE:
 make install
 ```
 
+Then make sure the shell launches sway:
+
+```bash
+# ~/.zshenv example
+
+if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then
+  export LANG=en_US.UTF-8
+  export LC_ALL=en_US.UTF-8
+  dbus-run-session sway > ~/sway.log 2>&1
+fi
+```
+
 ## Keyboard shortcuts
 
 Without leader key:
