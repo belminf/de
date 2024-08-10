@@ -52,8 +52,8 @@ bindsym --release Shift+Print exec XDG_SCREENSHOTS_DIR="${HOME}/screenshots" /us
 bindsym $mod+Return exec TERMINAL=kitty i3-sensible-terminal -T 'tmux' zsh -i -c "${HOME}/.tmux/session_attach.sh"
 
 # Chromium
-bindsym $mod+BackSpace exec /opt/google/chrome/chrome --profile-directory="Default" --enable-features=useOzonePlatform --ozone-platform=wayland --gtk-version=4
-bindsym $mod+Ctrl+BackSpace exec /opt/google/chrome/chrome --incognito --profile-directory="Profile 1" --enable-features=useOzonePlatform --ozone-platform=wayland --gtk-version=4
+bindsym $mod+BackSpace exec /opt/google/chrome/chrome --profile-directory="Default" --enable-features=useOzonePlatform --ozone-platform=wayland
+bindsym $mod+Ctrl+BackSpace exec /opt/google/chrome/chrome --incognito --profile-directory="Profile 1" --enable-features=useOzonePlatform --ozone-platform=wayland
 
 # Webapps
 bindsym $mod+n exec ${HOME}/.de/scripts/webapp_launch.sh "Standard Notes"
