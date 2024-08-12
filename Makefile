@@ -3,6 +3,7 @@ install :
 	yay -S --needed --noconfirm \
 		sway \
 		swaybg \
+		swayimg \
 		keyd \
 		jq \
 		mako \
@@ -21,7 +22,7 @@ install :
 	ln -sf $$(readlink -f .inputrc) ~/.inputrc
 	
 	# .config configs
-	for c in sway waybar gammastep rofi kanshi; do ln -sf $$(readlink -f $$c) ~/.config/; done
+	for c in sway waybar gammastep rofi kanshi mako; do ln -sf $$(readlink -f $$c) ~/.config/; done
 	
 	# Services
 	sudo systemctl enable keyd --now

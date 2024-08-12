@@ -1,0 +1,16 @@
+anchor=top-center
+font=Inconsolata Nerd Font Mono
+max-visible=1
+icons=1
+markup=1
+padding=5
+background-color=#7c6f64
+border-color=#a89984
+progress-color=#ebdbb2
+text-color=#f9f5d7
+text-alignment=center
+border-size=1
+border-radius=10
+on-button-middle=dismiss-all
+margin=2
+format=<b>%a - %s</b>\n%b

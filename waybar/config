@@ -3,9 +3,9 @@
     "height": 30,
     "modules-left": ["sway/workspaces", "sway/mode", "idle_inhibitor", "sway/window"],
     "modules-center": ["clock"],
-    "modules-right": ["pulseaudio", "network", "backlight", "bluetooth", "battery", "tray"],
+    "modules-right": ["pulseaudio", "network", "bluetooth", "battery", "tray"],
     "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
+        "format": "{}"
     },
     "bluetooth": {
       "format": "",
@@ -27,11 +27,6 @@
     },
     "clock": {
         "format": "{:%b %d %Y, %H:%M}"
-    },
-    "backlight": {
-        "device": "intel_backlight",
-        "format": "{percent}% {icon}",
-        "format-icons": ["", ""]
     },
     "battery": {
         "states": {

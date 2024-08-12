@@ -136,7 +136,7 @@ bindsym $mod+Shift+backslash layout splith
 bindsym $mod+Shift+minus layout splitv
 
 # Mouse+$mod to drag floating windows
-floating_modifier $mod
+floating_modifier Ctrl
 
 # Toggle tiling/floating
 bindsym $mod+Tab floating toggle
