@@ -57,6 +57,7 @@ bindsym $mod+Ctrl+BackSpace exec /opt/google/chrome/chrome --incognito --profile
 
 # Webapps
 bindsym $mod+n exec ${HOME}/.de/scripts/webapp_launch.sh "Standard Notes"
+bindsym $mod+k exec ${HOME}/.de/scripts/webapp_launch.sh "Google Keep"
 
 # Workspace change
 bindsym $mod+Ctrl+Up workspace next_on_output
@@ -72,7 +73,7 @@ bindsym $mod+Ctrl+Left focus output left
 bindsym $mod+Ctrl+Right focus output right
 
 # Window focus
-exec /usr/share/sway-contrib/inactive-windows-transparency.py --opacity 0.8
+exec /usr/share/sway-contrib/inactive-windows-transparency.py --opacity 0.925
 focus_follows_mouse yes
 bindsym $mod+Left focus left
 bindsym $mod+Right focus right
