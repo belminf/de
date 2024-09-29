@@ -58,9 +58,10 @@ bindsym $mod+Ctrl+BackSpace exec /opt/google/chrome/chrome --incognito --profile
 # Webapps
 bindsym $mod+n exec ${HOME}/.de/scripts/webapp_launch.sh "Standard Notes"
 
-# Grave actions
-bindsym $mod+grave exec --no-startup-id ${HOME}/.de/scripts/create_workspace.sh
-bindsym $mod+Shift+grave exec --no-startup-id ${HOME}/.de/scripts/move_to_new_workspace.sh
+# Workspace managements
+bindsym $mod+Tab workspace next_on_output
+bindsym $mod+Ctrl+Tab exec --no-startup-id ${HOME}/.de/scripts/create_workspace.sh
+bindsym $mod+Shift+Tab exec --no-startup-id ${HOME}/.de/scripts/move_to_new_workspace.sh
 
 # Workspace change
 bindsym $mod+Ctrl+Up workspace next_on_output
@@ -152,10 +153,10 @@ bindsym $mod+Shift+minus layout splitv
 floating_modifier Ctrl
 
 # Toggle tiling/floating
-bindsym $mod+Tab floating toggle
+bindsym $mod+grave floating toggle
 
 # Change focus from tiling/focus windows
-bindsym $mod+Shift+Tab focus mode_toggle
+bindsym $mod+Shift+grave focus mode_toggle
 
 # Bluetooth
 # TODO
