@@ -57,38 +57,50 @@ bindsym $mod+Ctrl+BackSpace exec /opt/google/chrome/chrome --incognito --profile
 
 # Webapps
 bindsym $mod+n exec ${HOME}/.de/scripts/webapp_launch.sh "Standard Notes"
-bindsym $mod+k exec ${HOME}/.de/scripts/webapp_launch.sh "Google Keep"
+
+# Grave actions
+bindsym $mod+grave exec --no-startup-id ${HOME}/.de/scripts/create_workspace.sh
+bindsym $mod+Shift+grave exec --no-startup-id ${HOME}/.de/scripts/move_to_new_workspace.sh
 
 # Workspace change
 bindsym $mod+Ctrl+Up workspace next_on_output
+bindsym $mod+Ctrl+j workspace next_on_output
 bindsym $mod+Ctrl+Down workspace prev_on_output
-
-# Lever actions
-bindsym $mod+grave workspace next_on_output
-bindsym $mod+Ctrl+grave exec --no-startup-id ${HOME}/.de/scripts/create_workspace.sh
-bindsym $mod+Shift+grave exec --no-startup-id ${HOME}/.de/scripts/move_to_new_workspace.sh
+bindsym $mod+Ctrl+k workspace prev_on_output
 
 # Monitor change
 bindsym $mod+Ctrl+Left focus output left
+bindsym $mod+Ctrl+h focus output left
 bindsym $mod+Ctrl+Right focus output right
+bindsym $mod+Ctrl+l focus output right
 
 # Window focus
 exec /usr/share/sway-contrib/inactive-windows-transparency.py --opacity 0.925
 focus_follows_mouse yes
 bindsym $mod+Left focus left
+bindsym $mod+h focus left
 bindsym $mod+Right focus right
+bindsym $mod+l focus right
 bindsym $mod+Down focus down
+bindsym $mod+j focus down
 bindsym $mod+Up focus up
+bindsym $mod+k focus up
 
 # Move window
 bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+h move left
 bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+l move right
 bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+j move down
 bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+k move up
 
 # Move workspace
 bindsym $mod+Mod1+Left move workspace to output left
+bindsym $mod+Mod1+h move workspace to output left
 bindsym $mod+Mod1+Right move workspace to output right
+bindsym $mod+Mod1+l move workspace to output right
 
 # Switch to workspace
 bindsym $mod+1 workspace 1
