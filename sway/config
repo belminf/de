@@ -5,6 +5,9 @@ set $mod Mod4
 output * bg "${HOME}/.de/wallpaper.png" fill
 exec ${HOME}/.de/scripts/idle.sh
 
+# Keyboard
+input type:keyboard xkb_options "compose:ralt"
+
 # Daemons
 exec_always sh -c 'pkill kanshi; kanshi &'
 exec_always sh -c 'pkill mako; mako &'
