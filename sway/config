@@ -1,3 +1,7 @@
+include /etc/sway/config.d/*
+
+xwayland disable
+
 # Use super key
 set $mod Mod4
 
@@ -44,7 +48,7 @@ bindsym $mod+p exec cliphist list | rofi -dmenu | cliphist decode | wl-copy
 bindsym $mod+Shift+v exec cliphist list | rofi -dmenu | cliphist decode | wl-copy
 
 # Exit options
-bindsym $mod+End exec ${HOME}/.de/scripts/powermenu.sh
+bindsym $mod+Delete exec ${HOME}/.de/scripts/powermenu.sh
 
 # Screenshot
 bindsym --release Print exec XDG_SCREENSHOTS_DIR="${HOME}/screenshots" /usr/share/sway-contrib/grimshot copy area
@@ -67,16 +71,16 @@ bindsym $mod+Ctrl+Tab exec --no-startup-id ${HOME}/.de/scripts/create_workspace.
 bindsym $mod+Shift+Tab exec --no-startup-id ${HOME}/.de/scripts/move_to_new_workspace.sh
 
 # Workspace change
-bindsym $mod+Ctrl+Up workspace next_on_output
-bindsym $mod+Ctrl+j workspace next_on_output
-bindsym $mod+Ctrl+Down workspace prev_on_output
-bindsym $mod+Ctrl+k workspace prev_on_output
+bindsym $mod+Mod1+Up workspace next_on_output
+bindsym $mod+Mod1+j workspace next_on_output
+bindsym $mod+Mod1+Down workspace prev_on_output
+bindsym $mod+Mod1+k workspace prev_on_output
 
 # Monitor change
-bindsym $mod+Ctrl+Left focus output left
-bindsym $mod+Ctrl+h focus output left
-bindsym $mod+Ctrl+Right focus output right
-bindsym $mod+Ctrl+l focus output right
+bindsym $mod+Mod1+Left focus output left
+bindsym $mod+Mod1+h focus output left
+bindsym $mod+Mod1+Right focus output right
+bindsym $mod+Mod1+l focus output right
 
 # Window focus
 exec /usr/share/sway-contrib/inactive-windows-transparency.py --opacity 0.925
@@ -101,10 +105,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+k move up
 
 # Move workspace
-bindsym $mod+Mod1+Left move workspace to output left
-bindsym $mod+Mod1+h move workspace to output left
-bindsym $mod+Mod1+Right move workspace to output right
-bindsym $mod+Mod1+l move workspace to output right
+bindsym $mod+Ctrl+Left move workspace to output left
+bindsym $mod+Ctrl+h move workspace to output left
+bindsym $mod+Ctrl+Right move workspace to output right
+bindsym $mod+Ctrl+l move workspace to output right
 
 # Switch to workspace
 bindsym $mod+1 workspace 1
