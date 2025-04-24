@@ -43,16 +43,6 @@ window#waybar {
   font-size: 15px;
 }
 
-#battery {
-  background-color: @foreground;
-  color: @background;
-}
-
-#battery.charging {
-  color: @background;
-  background-color: @green;
-}
-
 @keyframes blink {
   to {
     background-color: @foreground;
@@ -72,9 +62,16 @@ window#waybar {
   margin: 0 3px;
 }
 
+#battery.charging {
+  animation-name: blink;
+  animation-duration: 2.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
 #battery.warning:not(.charging) {
-  background: @red;
-  color: @foreground;
+  color: red;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: linear;

@@ -30,11 +30,10 @@
     },
     "battery": {
         "states": {
-            "charged": 95,
+            "charged": 90,
             "full": 100,
         },
-        "format-charged": "",
-        "format-full": "",
+        "interval": 60,
         "format": "{capacity}% {icon}",
         "format-icons": ["", "", "", "", ""]
     },
