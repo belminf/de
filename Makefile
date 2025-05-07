@@ -16,13 +16,14 @@ install :
 		gammastep \
 		iwgtk \
 		kanshi
-	
+
 	# Link custom configs
 	sudo ln -sf $$(readlink -f keyd/default.conf) /etc/keyd/default.conf
+	sudo ln -sf $$(readlink -f keyd/shared.conf) /etc/keyd/shared.conf
 	ln -sf $$(readlink -f .inputrc) ~/.inputrc
-	
+
 	# .config configs
 	for c in sway waybar gammastep rofi kanshi mako; do ln -sf $$(readlink -f $$c) ~/.config/; done
-	
+
 	# Services
 	sudo systemctl enable keyd --now
