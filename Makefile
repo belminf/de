@@ -18,8 +18,7 @@ install :
 		kanshi
 
 	# Link custom configs
-	sudo ln -sf $$(readlink -f keyd/default.conf) /etc/keyd/default.conf
-	sudo ln -sf $$(readlink -f keyd/shared.conf) /etc/keyd/shared.conf
+	sudo ln -sf $$(readlink -f keyd)/ /etc/keyd
 	ln -sf $$(readlink -f .inputrc) ~/.inputrc
 
 	# .config configs
